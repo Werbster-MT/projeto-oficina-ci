@@ -8,12 +8,12 @@ class Login extends CI_Controller
 		parent::__construct(); 
 		$this->load->helper('url');
 		$this->load->model('login_model');
+		$this->load->library('session');
 	}
 
 	public function index()
 	{
 		$dados["title"] = "Login - Oficina Auto";
-		$this->load->view('templates/header', $dados);
 		$this->load->view('pages/login', $dados);
 		$this->load->view('templates/js'); 
 	}

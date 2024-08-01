@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+/* General Configurations */
+body {
+    background-color: #ECF0F1;
+}
+
+.btn-primary {
+    background-color: #E67E22;
+    border-color: #E67E22;
+}
+
+.btn-primary:hover {
+    background-color: #d96419;
+    border-color: #d96419;
+}
+
+.text-primary {
+    color: #2C3E50 !important;
+}
+
+.alert-danger {
+    color: #C0392B;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+footer {
+    background-color: #2C3E50;
+    color: #FFFFFF;
+}
+
+
+/* Login */
+.card {
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: auto;
+}
+
+.form-control {
+    border: 1px solid #ced4da;
+    border-left: none;
+}
+
+.image-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.input-group-text {
+    background-color: #ECF0F1;
+    border: 1px solid #ced4da;
+    border-right: none;
+}
+
+@media screen and (min-width: 2560px) {
+    .card-body {
+        padding: 3rem;
+    }
+    .form-container {
+        width: 800px;
+    }
+    .input-group-text, .form-control {
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+    .btn-primary {
+        font-size: 1.5rem;
+        padding: 1rem 1.5rem;
+    }
+    .text-primary {
+        font-size: 2rem;
+    }
+    h1, h2 {
+        font-size: 2.5rem;
+    }
+}

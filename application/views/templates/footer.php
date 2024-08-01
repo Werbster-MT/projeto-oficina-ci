@@ -1,3 +1,9 @@
-<footer class="py-3">
-    <div class="text-center text-white">Desenvolvido por <strong>Oficina Auto</strong> &copy;</div>
+</div>
+</div>
+<footer class="bg-dark text-white text-center py-3">
+    <div class="container">
+        Desenvolvido por <strong>Oficina Auto</strong> &copy; <?php echo date('Y'); ?>
+    </div>
 </footer>
+</body>
+</html>
