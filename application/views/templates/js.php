@@ -6,3 +6,14 @@
     document.querySelector("#sidebar").classList.toggle("expand");
     });
 </script>
+
+<script>
+// Inicializa o DataTable com tradução para o português
+$(document).ready(function() {
+    $('#materiaisTable').DataTable({
+        "language": {
+            "url": "<?=base_url('assets/js/pt-BR.json')?>" // URL para o arquivo de tradução
+        }
+    });
+});
+</script>

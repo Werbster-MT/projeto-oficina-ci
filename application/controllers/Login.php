@@ -15,7 +15,6 @@ class Login extends CI_Controller
 	{
 		$dados["title"] = "Login - Oficina Auto";
 		$this->load->view('pages/login', $dados);
-		$this->load->view('templates/js'); 
 	}
 
 	public function enter() {
@@ -27,20 +26,19 @@ class Login extends CI_Controller
 			$this->session->set_userdata("logged_user", $user);
 			
 			if($user["nivel_acesso"] === "admin"){
-				redirect("admin/dashboard");
+				redirect("dashboard");
 			}elseif ($user["nivel_acesso"] === "vendedor"){
-				redirect('vendas/vendas');
+				redirect('vendas');
 			}elseif($user["nivel_acesso"] === "mecanico"){
-				redirect('servicos/servicos');
+				redirect('servicos');
 			}elseif($user["nivel_acesso"] === "almoxarifado"){
-				redirect('materiais/materiais');
+				redirect('materiais');
 			}
 		}else {
 			$dados['login_error'] = "Email e/ou senha incorretos!"; 
 			$dados["title"] = "Login - Oficina Auto";
 			$this->load->view('templates/header', $dados);
 			$this->load->view('pages/login', $dados);
-			$this->load->view('templates/js'); 
 		}
 	}
 
