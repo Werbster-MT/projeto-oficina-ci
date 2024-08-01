@@ -20,8 +20,8 @@ class Login extends CI_Controller
 
 	public function enter() {
 		$email = $_POST['email'];
-		$senha = md5($_POST['senha']);
-		$user     = $this->login_model->store($email, $senha);
+		$senha = $_POST['senha'];
+		$user  = $this->login_model->store($email, $senha);
 
 		if($user){
 			$this->session->set_userdata("logged_user", $user);
