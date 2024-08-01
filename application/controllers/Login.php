@@ -20,7 +20,7 @@ class Login extends CI_Controller
 
 	public function enter() {
 		$email = $_POST['email'];
-		$senha = $_POST['senha'];
+		$senha = md5($_POST['senha']);
 		$user     = $this->login_model->store($email, $senha);
 
 		if($user){
