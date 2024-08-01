@@ -29,11 +29,19 @@
         
         <?php if ($user['nivel_acesso'] === 'admin' || $user['nivel_acesso'] === 'almoxarifado'): ?>
             <li class="sidebar-item">
-                <a href="#" class="sidebar-link">
+                <a href="<?=base_url('materiais')?>" class="sidebar-link">
                 <i class="fa-solid fa-boxes-stacked"></i>
                     <span>Materiais</span>
                 </a>
             </li>
+
+            <li class="sidebar-item">
+                <a href="<?=base_url('materiais/new')?>" class="sidebar-link">
+                <i class="fa-solid fa-box-open"></i>
+                    <span>Adicionar Material</span>
+                </a>
+            </li>
+
         <?php endif; ?>
 
         <?php if ($user['nivel_acesso'] === 'admin'): ?>

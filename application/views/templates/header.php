@@ -11,6 +11,12 @@
     <script src="https://kit.fontawesome.com/0c23645969.js" crossorigin="anonymous"></script>
     <!-- Inclusão de um arquivo de estilo CSS personalizado -->
     <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
+    <!-- Data Table -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
 <div class="wrapper">
