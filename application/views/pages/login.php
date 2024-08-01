@@ -11,6 +11,7 @@
     <script src="https://kit.fontawesome.com/0c23645969.js" crossorigin="anonymous"></script>
     <!-- Inclusão de um arquivo de estilo CSS personalizado -->
     <link rel="stylesheet" href="<?= base_url('assets/css/login.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/style.css')?>">
 </head>
 <body>
 <body>
