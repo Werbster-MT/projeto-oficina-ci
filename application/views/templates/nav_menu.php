@@ -20,9 +20,16 @@
     
         <?php if ($user['nivel_acesso'] === 'admin' || $user['nivel_acesso'] === 'vendedor'): ?>
             <li class="sidebar-item">
-                <a href="#" class="sidebar-link">
-                    <i class="fa-solid fa-money-bill"></i>
+                <a href="<?=base_url('vendas')?>" class="sidebar-link">
+                <i class="fas fa-shopping-bag"></i>
                     <span>Vendas</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item">
+                <a href="<?=base_url('vendas/new')?>" class="sidebar-link">
+                    <i class="fas fa-cart-plus"></i>
+                    <span>Adicionar Venda</span>
                 </a>
             </li>
         <?php endif; ?>

@@ -6,7 +6,7 @@ class Materiais extends CI_Controller {
     public function __construct() {
         parent::__construct();
         permission();
-        $this->load->model('materiais_model'); // Certifique-se de que o caminho está correto
+        $this->load->model('materiais_model'); 
         $this->load->library('session');
     }
 
@@ -14,10 +14,11 @@ class Materiais extends CI_Controller {
         $data['title'] = "Materiais";
         $data["materiais"] = $this->materiais_model->index();
         $data['user'] = $this->session->userdata("logged_user");
+        $data['table'] = "materiaisTable";
 
         $this->load->view('templates/header', $data);
-        $this->load->view('templates/nav-menu', $data);
-        $this->load->view('templates/nav-top', $data);
+        $this->load->view('templates/nav_menu', $data);
+        $this->load->view('templates/nav_top', $data);
         $this->load->view('pages/materiais/materiais', $data);
         $this->load->view('templates/modal', $data);
         $this->load->view('templates/js', $data);
@@ -29,8 +30,8 @@ class Materiais extends CI_Controller {
         $data['user'] = $this->session->userdata("logged_user");
 
         $this->load->view('templates/header', $data);
-        $this->load->view('templates/nav-menu', $data);
-        $this->load->view('templates/nav-top', $data);
+        $this->load->view('templates/nav_menu', $data);
+        $this->load->view('templates/nav_top', $data);
         $this->load->view('pages/materiais/adicionar_material', $data);
         $this->load->view('templates/modal', $data);
         $this->load->view('templates/js', $data);
@@ -55,11 +56,11 @@ class Materiais extends CI_Controller {
     public function edit($id) {
         $data['title'] = "Alterar Material";
         $data['user'] = $this->session->userdata("logged_user");
-        $data['material'] = $this->materiais_model->get_material_by_id($id);
+        $data['material'] = $this->materiais_model->get_material($id);
     
         $this->load->view('templates/header', $data);
-        $this->load->view('templates/nav-menu', $data);
-        $this->load->view('templates/nav-top', $data);
+        $this->load->view('templates/nav_menu', $data);
+        $this->load->view('templates/nav_top', $data);
         $this->load->view('pages/materiais/alterar_material', $data);
         $this->load->view('templates/modal', $data);
         $this->load->view('templates/js', $data);

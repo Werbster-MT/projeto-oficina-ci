@@ -14,8 +14,8 @@ class Dashboard extends CI_Controller {
 		$data['title'] = "Dashboard - CodeIgniter.";
 		$data['user'] = $this->session->userdata("logged_user");
 		$this->load->view('templates/header', $data);
-		$this->load->view('templates/nav-menu', $data);
-		$this->load->view('templates/nav-top', $data);
+		$this->load->view('templates/nav_menu', $data);
+		$this->load->view('templates/nav_top', $data);
 		$this->load->view('pages/admin/dashboard', $data);
 		$this->load->view('templates/js', $data);
 		$this->load->view('templates/footer', $data);
