@@ -37,7 +37,6 @@ class Login extends CI_Controller
 		}else {
 			$dados['login_error'] = "Email e/ou senha incorretos!"; 
 			$dados["title"] = "Login - Oficina Auto";
-			$this->load->view('templates/header', $dados);
 			$this->load->view('pages/login', $dados);
 		}
 	}
