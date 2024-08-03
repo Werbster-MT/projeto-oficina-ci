@@ -11,9 +11,16 @@
     <ul class="sidebar-nav">
         <?php if ($user['nivel_acesso'] === 'admin' || $user['nivel_acesso'] === 'mecanico'): ?>
             <li class="sidebar-item">
-                <a href="#" class="sidebar-link">
+                <a href="<?=base_url('servicos')?>" class="sidebar-link">
                     <i class="fa-solid fa-screwdriver-wrench"></i>
-                    <span>Serviços</span>
+                    <span>Ordem de Serviços</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item">
+                <a href="<?=base_url('servicos/new')?>" class="sidebar-link">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>Adicionar Ordem de Serviço</span>
                 </a>
             </li>
         <?php endif; ?>
