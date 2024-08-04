@@ -282,17 +282,9 @@ h2 {
 /* Media Query for smaller screens */
 @media (max-width: 768px) {
     .wrapper {
-        /* grid-template-areas: 
-            " nav-top"
-            "main main"
-            "footer footer"; */
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr auto;
     }
-
-    /* #sidebar {
-        display: none;
-    } */
 
     #sidebar.expand {
         display: flex;
