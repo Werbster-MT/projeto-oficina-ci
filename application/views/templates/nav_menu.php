@@ -9,7 +9,77 @@
         </div>
     </div>
     <ul class="sidebar-nav">
-        <?php if ($user['nivel_acesso'] === 'admin' || $user['nivel_acesso'] === 'mecanico'): ?>
+        <?php if ($user['nivel_acesso'] === 'mecanico'): ?>
+            <li class="sidebar-item">
+                <a href="<?=base_url('servicos')?>" class="sidebar-link">
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                    <span>Ordem de Serviços</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="<?=base_url('servicos/new')?>" class="sidebar-link">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>Adicionar Ordem de Serviço</span>
+                </a>
+            </li>
+        <?php endif; ?>
+        <?php if ($user['nivel_acesso'] === 'vendedor'): ?>
+            <li class="sidebar-item">
+                <a href="<?=base_url('vendas')?>" class="sidebar-link">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>Vendas</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="<?=base_url('vendas/new')?>" class="sidebar-link">
+                    <i class="fas fa-cart-plus"></i>
+                    <span>Adicionar Venda</span>
+                </a>
+            </li>
+        <?php endif; ?>
+        <?php if ($user['nivel_acesso'] === 'almoxarifado'): ?>
+            <li class="sidebar-item">
+                <a href="<?=base_url('materiais')?>" class="sidebar-link">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                    <span>Materiais</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="<?=base_url('materiais/new')?>" class="sidebar-link">
+                    <i class="fa-solid fa-box-open"></i>
+                    <span>Adicionar Material</span>
+                </a>
+            </li>
+        <?php endif; ?>
+        <?php if ($user['nivel_acesso'] === 'admin'): ?>
+            <li class="sidebar-item">
+                <a href="<?=base_url('dashboard')?>" class="sidebar-link">
+                    <i class="fas fa-chart-pie"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item">
+                <a href="<?=base_url('relatorios')?>" class="sidebar-link">
+                    <i class="fas fa-chart-simple"></i>
+                    <span>Relatórios</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item">
+                <a href="<?=base_url('vendas')?>" class="sidebar-link">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>Vendas</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item">
+                <a href="<?=base_url('materiais')?>" class="sidebar-link">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                    <span>Materiais</span>
+                </a>
+            </li>
+            
             <li class="sidebar-item">
                 <a href="<?=base_url('servicos')?>" class="sidebar-link">
                     <i class="fa-solid fa-screwdriver-wrench"></i>
@@ -18,68 +88,7 @@
             </li>
 
             <li class="sidebar-item">
-                <a href="<?=base_url('servicos/new')?>" class="sidebar-link">
-                    <i class="fas fa-clipboard-list"></i>
-                    <span>Adicionar Ordem de Serviço</span>
-                </a>
-            </li>
-        <?php endif; ?>
-    
-        <?php if ($user['nivel_acesso'] === 'admin' || $user['nivel_acesso'] === 'vendedor'): ?>
-            <li class="sidebar-item">
-                <a href="<?=base_url('vendas')?>" class="sidebar-link">
-                <i class="fas fa-shopping-bag"></i>
-                    <span>Vendas</span>
-                </a>
-            </li>
-
-            <li class="sidebar-item">
-                <a href="<?=base_url('vendas/new')?>" class="sidebar-link">
-                    <i class="fas fa-cart-plus"></i>
-                    <span>Adicionar Venda</span>
-                </a>
-            </li>
-        <?php endif; ?>
-        
-        <?php if ($user['nivel_acesso'] === 'admin' || $user['nivel_acesso'] === 'almoxarifado'): ?>
-            <li class="sidebar-item">
-                <a href="<?=base_url('materiais')?>" class="sidebar-link">
-                <i class="fa-solid fa-boxes-stacked"></i>
-                    <span>Materiais</span>
-                </a>
-            </li>
-
-            <li class="sidebar-item">
-                <a href="<?=base_url('materiais/new')?>" class="sidebar-link">
-                <i class="fa-solid fa-box-open"></i>
-                    <span>Adicionar Material</span>
-                </a>
-            </li>
-
-        <?php endif; ?>
-
-        <?php if ($user['nivel_acesso'] === 'admin'): ?>
-            <li class="sidebar-item">
-                <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
-                    data-bs-target="#auth" aria-expanded="false" aria-controls="auth">
-                    <i class="fa-solid fa-chart-simple"></i>
-                    <span>Relatórios</span>
-                </a>
-                <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link">Serviços</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link">Vendas</a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link">Materiais</a>
-                    </li>
-                </ul>
-            </li>    
-            
-            <li class="sidebar-item">
-                <a href="#" class="sidebar-link">
+                <a href="<?=base_url('dashboard/new')?>" class="sidebar-link">
                     <i class="fa-solid fa-user-plus"></i>
                     <span>Adicionar Usuário</span>
                 </a>
@@ -88,7 +97,7 @@
     </ul>
     <div class="sidebar-footer">
         <a href="<?=base_url('login/logout')?>" class="sidebar-link">
-        <i class="fa-solid fa-right-from-bracket"></i>
+        <i class="fa-solid fa-power-off"></i>
             <span>Sair</span>
         </a>
     </div>

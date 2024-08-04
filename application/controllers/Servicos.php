@@ -71,7 +71,8 @@ class Servicos extends CI_Controller {
     public function store() {
         $ordem_servico = $this->input->post();
         $ordem_servico['usuario'] = $this->session->userdata("logged_user")['email'];
-    
+        $ordem_servico['data'] = date('Y-m-d H:i:s');
+        
         $servicos_info_ids = $this->input->post('servicos');
         $datas_inicio = $this->input->post('datas_inicio');
         $datas_fim = $this->input->post('datas_fim');
@@ -186,7 +187,6 @@ class Servicos extends CI_Controller {
         redirect("servicos/new?status=$status&message=$message");
     }
     
-    
     public function edit($id) {
         $data['title'] = "Alterar Ordem de Serviço";
         $data['user'] = $this->session->userdata("logged_user");
@@ -210,7 +210,8 @@ class Servicos extends CI_Controller {
     public function update($id) {
         $ordem_servico = $this->input->post();
         $ordem_servico['usuario'] = $this->session->userdata("logged_user")['email'];
-    
+        $ordem_servico['data'] = date('Y-m-d H:i:s');
+        
         $servicos_info_ids = $this->input->post('servicos');
         $datas_inicio = $this->input->post('datas_inicio');
         $datas_fim = $this->input->post('datas_fim');
