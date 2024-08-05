@@ -41,15 +41,17 @@ class Materiais extends CI_Controller {
     public function store() {
         $material = $this->input->post();
         $material['habilitado'] = ($material['quantidade'] <= 0) ? 0 : 1;
-    
-        if ($this->materiais_model->store($material)) {
+        $material['data'] = date('Y-m-d H:i:s');
+        
+        try {
+            $this->materiais_model->store($material);
             $status = 'success';
             $message = 'Material adicionado com sucesso!';
-        } else {
+        } catch (Exception $error) {
             $status = 'error';
             $message = 'Ocorreu um erro ao adicionar o material.';
         }
-    
+
         redirect("materiais/new?status=$status&message=$message");
     }
 
@@ -69,6 +71,8 @@ class Materiais extends CI_Controller {
     
     public function update($id) {
         $material = $this->input->post();
+        $material['data'] = date('Y-m-d H:i:s');
+        
         if ($material['quantidade'] <= 0) {
             $material['habilitado'] = 0;
             $material['quantidade'] = 0;
@@ -76,10 +80,11 @@ class Materiais extends CI_Controller {
             $material['habilitado'] = 1;
         }
 
-        if ($this->materiais_model->update($id, $material)) {
+        try {
+            $this->materiais_model->update($id, $material);
             $status = 'success';
             $message = 'Material alterado com sucesso!';
-        } else {
+        } catch (Exception $error) {
             $status = 'error';
             $message = 'Ocorreu um erro ao alterar o material.';
         }
@@ -89,11 +94,12 @@ class Materiais extends CI_Controller {
 
     public function disable($id) {
         $material = ['habilitado' => 0];
-    
-        if ($this->materiais_model->update($id, $material)) {
+        
+        try {
+            $this->materiais_model->update($id, $material);
             $status = 'success';
             $message = 'Material desabilitado com sucesso!';
-        } else {
+        } catch (Exception $error) {
             $status = 'error';
             $message = 'Ocorreu um erro ao desabilitar o material.';
         }
@@ -103,15 +109,16 @@ class Materiais extends CI_Controller {
 
     public function enable($id) {
         $material = ['habilitado' => 1];
-    
-        if ($this->materiais_model->update($id, $material)) {
+        
+        try {
+            $this->materiais_model->update($id, $material);
             $status = 'success';
             $message = 'Material habilitado com sucesso!';
-        } else {
+        } catch (Exception $error) {
             $status = 'error';
             $message = 'Ocorreu um erro ao habilitar o material.';
         }
-    
+        
         redirect("materiais?status=$status&message=$message");
     }
 }

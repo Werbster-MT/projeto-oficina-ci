@@ -13,6 +13,15 @@ class Login_model extends CI_Model
         return $c; // Retorna a senha criptografada
     }
 
+    // Função para gerar o hash da senha
+    public function gerarHash($senha) {
+        // Criptografa a senha
+        $txt = $this->cripto($senha);
+        // Gera um hash da senha criptografada usando o algoritmo bcrypt
+        $hash = password_hash($txt, PASSWORD_DEFAULT);
+        return $hash; // Retorna o hash gerado
+    }
+
 	// Função para verificar a senha contra o hash armazenado
     private function testarHash($senha, $hash) {
         // Verifica se a senha criptografada corresponde ao hash armazenado
