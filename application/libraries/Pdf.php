@@ -6,7 +6,7 @@ class Pdf {
 
     public function __construct() {
         // Use o autoload do Composer
-        require_once APPPATH . '../vendor/autoload.php';
+        require_once FCPATH . 'vendor/autoload.php';
         $this->dompdf = new Dompdf();
     }
 
@@ -26,4 +26,3 @@ class Pdf {
         $this->dompdf->stream($filename, $options);
     }
 }
-?>

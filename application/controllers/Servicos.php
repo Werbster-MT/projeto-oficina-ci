@@ -8,7 +8,7 @@ class Servicos extends CI_Controller {
         permission();
         $this->load->model('servicos_model');
         $this->load->model('clientes_model');
-        $this->load->model('servicosinfo_model');
+        $this->load->model('servicosInfo_model');
         $this->load->model('materiais_model');
         $this->load->library('session');
     }
@@ -55,7 +55,7 @@ class Servicos extends CI_Controller {
         $data['title'] = "Adicionar Ordem de Serviço";
         $data['user'] = $this->session->userdata("logged_user");
         $data['clientes'] = $this->clientes_model->get_all();
-        $data['servicos'] = $this->servicosinfo_model->get_all();
+        $data['servicos'] = $this->servicosInfo_model->get_all();
         $data['materiais'] = $this->materiais_model->index();
 
         $this->load->view('templates/header', $data);
@@ -96,7 +96,7 @@ class Servicos extends CI_Controller {
                 $data_fim = $datas_fim[$i];
     
                 // Buscar o valor do serviço da tabela ServicosInfo
-                $servico_info = $this->servicosinfo_model->get_by_id($servico_info_id);
+                $servico_info = $this->servicosInfo_model->get_by_id($servico_info_id);
                 $servico_valor = $servico_info['valor'];
     
                 // Verificar se o serviço já está associado a esta ordem de serviço
@@ -194,7 +194,7 @@ class Servicos extends CI_Controller {
         $data['servicos'] = $this->servicos_model->get_servicos_by_ordem_servico($id);
         $data['materiais'] = $this->servicos_model->get_materiais_by_ordem_servico($id);
         $data['clientes'] = $this->clientes_model->get_all();
-        $data['servicos_info'] = $this->servicosinfo_model->get_all();
+        $data['servicos_info'] = $this->servicosInfo_model->get_all();
         $data['materiais_info'] = $this->materiais_model->index();
     
         $this->load->view('templates/header', $data);
@@ -246,7 +246,7 @@ class Servicos extends CI_Controller {
                 $data_fim = $datas_fim[$i];
     
                 // Buscar o valor do serviço da tabela ServicosInfo
-                $servico_info = $this->servicosinfo_model->get_by_id($servico_info_id);
+                $servico_info = $this->servicosInfo_model->get_by_id($servico_info_id);
                 $servico_valor = $servico_info['valor'];
     
                 // Verificar se o serviço já existe para essa ordem de serviço

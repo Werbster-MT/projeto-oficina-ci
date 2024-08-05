@@ -9,7 +9,7 @@
                 </div>
                 <div class="form-group mb-3">
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email" class="form-control" value="<?= $user['email'] ?>" required>
+                    <input type="email" name="email" id="email" class="form-control" value="<?= $user['email'] ?>" readonly>
                 </div>
                 <div class="form-group mb-3">
                     <label for="senha">Nova Senha</label>
